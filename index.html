@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me? 💍</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- Cache Control Meta Tags -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css?v=3">
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="A romantic proposal website with beautiful animations and interactive elements">
+    <meta name="keywords" content="proposal, marriage, love, romantic, interactive">
+    <meta name="author" content="Your Love Story">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Will You Marry Me? 💍">
+    <meta property="og:description" content="A question straight from my heart...">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💕</text></svg>">
+</head>
+<body>
+    <!-- Background Canvas for Hearts -->
+    <canvas id="heartsCanvas"></canvas>
+    
+    <!-- Main Container -->
+    <div class="container" id="mainContainer">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <!-- Start Screen (Initially Visible) -->
+            <div class="start-screen" id="startScreen">
+                <div class="start-content">
+                    <h1 class="start-title">Ready for a Special Moment? 💕</h1>
+                    <p class="start-subtitle">Click below to begin your romantic journey...</p>
+                    <button class="btn btn-start" id="startBtn">
+                        <span class="btn-text">Start Experience 🎵</span>
+                        <span class="btn-glow"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Main Content (Initially Hidden) -->
+            <div class="hero-content" id="heroContent" style="display: none;">
+                <!-- Personalized Name (Optional) -->
+                <h1 class="hero-name" id="heroName">Oii Selfiee</h1>
+                
+                <!-- Main Question -->
+                <h2 class="hero-title">
+                    Enakku Eppo OK Solluva? 
+                    <span class="ring-emoji">💍</span>
+                    <span class="heart-emoji">❤️</span>
+                </h2>
+                
+                <!-- Subtext -->
+                <p class="hero-subtitle">A question straight from my heart...</p>
+                
+                <!-- Buttons Container -->
+                <div class="buttons-container">
+                    <button class="btn btn-yes" id="yesBtn">
+                        <span class="btn-text">YES!</span>
+                        <span class="btn-glow"></span>
+                    </button>
+                    
+                    <button class="btn btn-no" id="noBtn">
+                        <span class="btn-text">No</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Success Screen (Hidden Initially) -->
+        <section class="success-screen" id="successScreen">
+            <!-- I LOVE YOU Background Animation -->
+            <div class="love-you-background" id="loveYouBackground">
+                <div class="love-you-text">I LOVE YOU</div>
+                <div class="love-hearts-sparkle"></div>
+                <div class="love-hearts-sparkle"></div>
+                <div class="love-hearts-sparkle"></div>
+                <div class="love-hearts-sparkle"></div>
+                <div class="love-hearts-sparkle"></div>
+            </div>
+            
+            <div class="success-content">
+                <div class="success-animation">
+                    <div class="big-heart">❤️</div>
+                    <div class="sparkles"></div>
+                </div>
+                <h2 class="success-title">You just made me happy❤️</h2>
+                <p class="success-subtitle">I can't wait to spend forever with you!</p>
+                
+                <!-- Love Message Section -->
+                <div class="love-message-section">
+                    <h3>Without you, I'm nothing.❤️</h3>
+                    <div class="love-message-container">
+                        <div class="love-message" id="loveMessage">
+                            <p class="love-text">சொல்லிட்டாளே அவ காதல</p>
+                            <p class="love-text">சொல்லும் போதே சுகம் தாலல </p>
+                            <p class="love-text">இது போல் ஒரு வாா்த்தைய யாாிடமும் நெஞ்சு கேக்கல</p>
+                            <p class="love-text">இனி வேறொரு வாா்த்தைய கேட்டிடவும் எண்ணி பாக்கல</p>
+                            <p class="love-text">அவ சொன்ன சொல்லே போதும் அதுக்கு ஈடே இல்ல யேதும் யேதும்…</p>
+                            <p class="love-text final">I love you forever and always 💍</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Actions -->
+                <div class="success-actions">
+                    <!-- <button class="btn btn-secondary" id="shareBtn">Share Our Moment 📱</button> -->
+                    <!-- <button class="btn btn-secondary" id="restartBtn">Watch Again 🔄</button> -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- No Button Modal (Hidden Initially) -->
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal" id="noModal">
+                <div class="modal-content">
+                    <div class="modal-emoji">😄</div>
+                    <h3 class="modal-title">Nice try!</h3>
+                    <p class="modal-text">but destiny says YES! 💕</p>
+                    <button class="btn btn-modal" id="modalCloseBtn">Okay, I'll say yes! 😊</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <!-- Dark Mode Toggle -->
+        <!-- <button class="control-btn" id="darkModeToggle" title="Toggle Dark Mode">
+            <span class="control-icon">🌙</span>
+        </button> -->
+        
+        <!-- <button class="control-btn" id="musicToggle" title="Toggle Music">
+            <span class="control-icon">🎵</span>
+        </button> -->
+        
+        <!-- Personalize Name -->
+        <!-- <button class="control-btn" id="personalizeBtn" title="Personalize Name">
+            <span class="control-icon">✏️</span>
+        </button> -->
+        
+        <!-- Test Audio Button -->
+        <!-- <button class="control-btn" id="testAudioBtn" title="Test Audio" style="background: rgba(255, 215, 0, 0.2);">
+            <span class="control-icon">🎵</span>
+        </button> -->
+    </div>
+    
+    <!-- Hidden Audio Element -->
+    <audio id="backgroundMusic" loop>
+        <source src="./assets/Anjaan.wav" type="audio/wav">
+        <source src="./assets/Anjaan.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- JavaScript -->
+    <script src="script.js?v=4"></script>
+</body>
+</html>
